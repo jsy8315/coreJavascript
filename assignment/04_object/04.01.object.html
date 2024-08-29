@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <script>
+        // 02.객체가 비어있는지 확인하기
+        let schedule = {};
+
+        function isEmpty(a) {
+            for (let key in a) {
+
+                return false;
+            }
+            return true;
+        }
+
+        alert( isEmpty(schedule) );
+
+        // 03.변하지 않는 객체
+        const user = {
+            name : "John"
+        };
+
+        user.name = "Kim" //가능함, 변수의 재선언이나 재할당이 아니므로 가능함
+
+        // 04.프로퍼티 합계 구하기
+        let salaries = {
+            John : 100,
+            Ann : 160,
+            Pete : 130
+        }
+
+        function sumSalaries(a) {
+            let sum = 0;
+            for (let key in a) {
+                sum += a[key];
+                // console.log(a[key]);
+            }
+            return sum
+        }
+
+        alert(sumSalaries(salaries));
+        //a.key로 하면 안되는 이유 
+        // 점 표기법은 프로퍼티 이름이 고정된 문자열일때 사용함(key라는 이름을 가진 고정된 프로퍼티를 찾을 때 사용)
+        // 대괄호 표기법은 프로퍼티 이름이 동적으로 결정되거나, 프로퍼티 이름에 공백이나 특수문자가 포함될때 사용함
+
+        // 05.프로터피 값 두 배로 부풀리기
+        let menu = {
+            width : 200,
+            height : 300,
+            title : "My menu"
+        };
+
+        function multiplyNumeric(a) {
+            for(key in a) {
+                if (typeof a[key] != NaN) {
+                    a[key] = 2 * a[key];
+                    console.log(a[key]);
+                } else {
+
+                }
+            }
+            return a
+        }
+
+        console.log(multiplyNumeric(menu));
+    </script>
+</body>
+</html>
