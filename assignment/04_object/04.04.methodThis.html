@@ -23,28 +23,46 @@
         // alert( user.ref.name );
 
         // 계산기 만들기
-        let calculator = {
-            inputA : 0,
-            read() {
-                this.inputA = Number(prompt("값 입력해봐", []));
-            }, 
-            sum() {
-                return this.inputA + this.inputA;
-            },
-            mul() {
-                return this.inputA * this.inputA;
-            }, 
-        }
-        console.log(calculator.read());
-        console.log(calculator.sum());
-        console.log(calculator.mul());
+        // let calculator = {
+        //     inputA : 0,
+        //     read() {
+        //         this.inputA = Number(prompt("값 입력해봐", []));
+        //     }, 
+        //     sum() {
+        //         return this.inputA + this.inputA;
+        //     },
+        //     mul() {
+        //         return this.inputA * this.inputA;
+        //     }, 
+        // }
+        // console.log(calculator.read());
+        // console.log(calculator.sum());
+        // console.log(calculator.mul());
 
-        document.addEventListener('click', function(){
-            calculator.read();
-            alert(calculator.sum());
-            alert(calculator.mul());
-        })
+        // document.addEventListener('click', function(){
+        //     calculator.read();
+        //     alert(calculator.sum());
+        //     alert(calculator.mul());
+        // })
         
+        //체이닝
+        let ladder = {
+            step : 0,
+            up() {
+                this.step++;
+                return this;
+            },
+            down() {
+                this.step--;
+                return this;
+            },
+            showStep: function() {
+                alert( this.step );
+                return this;
+            }
+        }
+
+        ladder.up().up().down().showStep();
     </script>
 </body>
 </html>
