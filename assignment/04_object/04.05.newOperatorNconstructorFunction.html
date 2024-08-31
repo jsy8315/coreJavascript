@@ -24,25 +24,44 @@
         // alert(user.name);
         // alert(user.isAdmin);
 
-        //계산기 만들기
-        function Calculator() {
-            this.read = function() {
-                this.a = Number(prompt("수 입력01", []));
-                this.b = Number(prompt("수 입력02", []));
-            },
-            this.sum = function() {
-                return this.a + this.b;
-            },
-            this.mul = function() {
-                return this.a * this.b;
+        // //계산기 만들기
+        // function Calculator() {
+        //     this.read = function() {
+        //         this.a = Number(prompt("수 입력01", []));
+        //         this.b = Number(prompt("수 입력02", []));
+        //         //내부에서 사용되는 this 역시 새로 생성된 객체의 프로퍼티로 추가됨
+        //     },
+        //     this.sum = function() {
+        //         return this.a + this.b;
+        //     },
+        //     this.mul = function() {
+        //         return this.a * this.b;
+        //     }
+        // }
+
+        // let calculator = new Calculator();
+        // calculator.read();
+
+        // alert( "Sum=" + calculator.sum() );
+        // alert( "Mul=" + calculator.mul() );
+
+        // 누산기 만들기
+        function Accumulator(a) {
+            this.value = Number(a);
+            this.read = function(){
+                this.promptInputNum = Number(prompt("싸게싸게 입력하쇼잉", []));
+                // console.log(this.value);
+                // console.log(this.promptInputNum);
+                this.value = Number(this.promptInputNum) + Number(this.value);
+                // console.log(this.value);
             }
         }
+        let accumulator = new Accumulator(1); // 최초값: 1
 
-        let calculator = new Calculator();
-        calculator.read();
+        accumulator.read(); // 사용자가 입력한 값을 더해줌
+        accumulator.read(); // 사용자가 입력한 값을 더해줌
 
-        alert( "Sum=" + calculator.sum() );
-        alert( "Mul=" + calculator.mul() );
+        alert(accumulator.value); // 최초값과 사용자가 입력한 모든 값을 더해 출력함
     </script>
 </body>
 </html>
