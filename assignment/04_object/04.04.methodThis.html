@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn">버튼</button>
+    </div>
+    <script>
+        // 객체 리터럴에서 this 사용하기
+        // 점 앞의 this : 메서드를 호출할 때 사용된 객체
+        // function makeUser() {
+        //     return {
+        //         name : "Johm",
+        //         ref : this
+        //     };
+        // };
+
+        // let user = makeUser();
+        // alert( user.ref.name );
+
+        // 계산기 만들기
+        let calculator = {
+            inputA : 0,
+            read() {
+                this.inputA = Number(prompt("값 입력해봐", []));
+            }, 
+            sum() {
+                return this.inputA + this.inputA;
+            },
+            mul() {
+                return this.inputA * this.inputA;
+            }, 
+        }
+        console.log(calculator.read());
+        console.log(calculator.sum());
+        console.log(calculator.mul());
+
+        document.addEventListener('click', function(){
+            calculator.read();
+            alert(calculator.sum());
+            alert(calculator.mul());
+        })
+        
+    </script>
+</body>
+</html>
