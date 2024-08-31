@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        // //생성자 함수
+        // function User(name) {
+        //     // this = {}
+        //     this.name = name;
+        //     this.isAdmin = false;
+
+        //     // return this;
+        // }
+
+        // let user = new User("보라");
+
+        // alert(user.name);
+        // alert(user.isAdmin);
+
+        //계산기 만들기
+        function Calculator() {
+            this.read = function() {
+                this.a = Number(prompt("수 입력01", []));
+                this.b = Number(prompt("수 입력02", []));
+            },
+            this.sum = function() {
+                return this.a + this.b;
+            },
+            this.mul = function() {
+                return this.a * this.b;
+            }
+        }
+
+        let calculator = new Calculator();
+        calculator.read();
+
+        alert( "Sum=" + calculator.sum() );
+        alert( "Mul=" + calculator.mul() );
+    </script>
+</body>
+</html>
