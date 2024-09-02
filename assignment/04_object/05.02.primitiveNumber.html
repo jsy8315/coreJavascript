@@ -43,8 +43,33 @@
 
         // 02. 6.35.toFixed(1) == 6.3인 이유
         // 정밀도 손실이 난거 같긴한데...일단 toFixed(n)은 항상 문자열을 반환한다
-        alert( (6.35 * 10).toFixed(0) / 10 );
+        // alert( (6.35 * 10).toFixed(0) / 10 );
 
+        // 03.숫자를 입력할 때까지 반복하기
+        // 유효한 숫자형이 뭐지 정수, 소수. bigInt? 일단 만들고 보자...
+        // 아 바로 와일문 돌려야할거 같은데
+        function readNumber() {
+            let a = prompt("유효한 숫자형 값을 입력하세요01", []);
+            // 아무것도 입력안하고 확인 > 자료형으로 변환(prompt) > 빈칸으로 구성됨
+            // 취소 > 자료형으로 변환(prompt) > null
+
+            // 아무것도 입력안하고 확인 > 숫자형으로 변환(+prompt) > 0
+            // 취소 > 숫자형으로 변환(+prompt) > null
+            while(!isFinite(a)) {
+                if (a == '' || a == null) {
+                    console.log(a)
+                    console.log("니 아무것도 입력안하고 확인 눌렀거나 취소 눌렀제");
+                    a = 0;
+                    return null
+                }  
+                else {
+                    a = prompt("유효한 숫자형 값을 입력하세요02", []);
+                }
+            }
+            return a;
+        }
+        
+        readNumber();
     </script>
     </body>
     </html>
