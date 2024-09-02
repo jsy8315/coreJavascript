@@ -10,35 +10,41 @@
 
     </div>
     <script>
-        let a = prompt("수 입력.", []);
-        let b = prompt("수 입력02.", []);
+        // // 01.수를 입력받아 덧셈하기
+        // let a = prompt("수 입력.", []);
+        // let b = prompt("수 입력02.", []);
             
-        // 두 수를 입력하라는데 경우의 수가
-        // 수가 겁나 커서 bigint나 infinity로 되는 경우
-        // 아니면 정수가 아닐 경우 >  tofixed(n)을 쓴다해도..흠
-        // or은 truthy, 하나도 없으면 가장 마지막을 반환
-        // and falsthy, 하나도 없으면 가장 마지막을 반환
-        // isNaN 숫자가 아니면 true, 숫자면 false 반환
+        // // 두 수를 입력하라는데 경우의 수가
+        // // 수가 겁나 커서 bigint나 infinity로 되는 경우
+        // // 아니면 정수가 아닐 경우 >  tofixed(n)을 쓴다해도..흠
+        // // or은 truthy, 하나도 없으면 가장 마지막을 반환
+        // // and falsthy, 하나도 없으면 가장 마지막을 반환
+        // // isNaN 숫자가 아니면 true, 숫자면 false 반환
             
-        // 소수인지 아닌지 판단하는 함수를 만들자
-        function isPrime(a) {
-            let b = parseInt(a);
-            let c = parseFloat(a);
-            if (b != c) {
-                // 다르면 소수지
-                return c
-            } else {
-                // 같으면 정수지
-                return b
-            }
+        // // 소수인지 아닌지 판단하는 함수를 만들자
+        // function isPrime(a) {
+        //     let b = parseInt(a);
+        //     let c = parseFloat(a);
+        //     if (b != c) {
+        //         // 다르면 소수지
+        //         return c
+        //     } else {
+        //         // 같으면 정수지
+        //         return b
+        //     }
 
-        }
+        // }
 
-        if ( isNaN(parseInt(a)) || isNaN(parseInt(b)) ){
-            alert("숫자입력하라그...")
-        } else {
-           alert(isPrime(a) + isPrime(b));
-        }
+        // if ( isNaN(parseInt(a)) || isNaN(parseInt(b)) ){
+        //     alert("숫자입력하라그...")
+        // } else {
+        //    alert(isPrime(a) + isPrime(b));
+        // }
+
+        // 02. 6.35.toFixed(1) == 6.3인 이유
+        // 정밀도 손실이 난거 같긴한데...일단 toFixed(n)은 항상 문자열을 반환한다
+        alert( (6.35 * 10).toFixed(0) / 10 );
+
     </script>
     </body>
     </html>
