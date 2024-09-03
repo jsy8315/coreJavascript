@@ -36,16 +36,39 @@
         // alert( checkSpam("innocent rabbit") );
         
         // 03. 문자열 줄이기
-        function truncate(str, maxlength) {
-            let copyStr = str;
-            let slicedCopyStr = copyStr.slice(0, maxlength - 1);
-            let copyStrLength = slicedCopyStr.length;
-            let omissionedCopyStr = ".".repeat((copyStr.length - copyStrLength));
+        // function truncate(str, maxlength) {
+        //     let copyStr = str;
+        //     let slicedCopyStr = copyStr.slice(0, maxlength - 1);
+        //     let copyStrLength = slicedCopyStr.length;
+        //     let omissionedCopyStr = ".".repeat((copyStr.length - copyStrLength));
             
-            return slicedCopyStr + omissionedCopyStr;
+        //     return slicedCopyStr + omissionedCopyStr;
+        // }
+
+        // alert( truncate("Hi everyone!", 20) );
+        
+        // 04. 숫자만 추출하기
+        function extractCurrencyValue(str) {
+            let copyStr = str;
+            let result = ""
+            console.log(isNaN(parseInt(copyStr[0])));
+            // 하나씩 가져온 다음 parseInt씌운 상태에서 isNaN해서 > false면 숫자
+            // false이면 toString > result에 더하기
+            for(let i = 0; i < copyStr.length; i++){
+                if( isNaN(parseInt(copyStr[i])) ){
+                    console.log(copyStr[i]);
+                } else {
+                    console.log(copyStr[i]);
+                    result += copyStr[i]
+                }
+            }
+
+            return Number(result);
         }
 
-        alert( truncate("Hi everyone!", 20) );
+        alert( extractCurrencyValue('$120') );
+        alert( extractCurrencyValue('$120') === 120 );
+        
     </script>
 </body>
 </html>
