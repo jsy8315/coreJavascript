@@ -21,20 +21,31 @@
         // alert( ucFirst("john") == "John")
         
         // 02. 스팸 문자열 걸러내기
-        function checkSpam(str) {
-            // 알아보기 쉽게 먼저 대문자로 바꾸자
-            // includes 메소드로 파악하기
-            let upperStr = str.toUpperCase();
+        // function checkSpam(str) {
+        //     // 알아보기 쉽게 먼저 대문자로 바꾸자
+        //     // includes 메소드로 파악하기
+        //     let upperStr = str.toUpperCase();
 
-            if (upperStr.includes('VIAGRA') || upperStr.includes('XXX')) {
-                return true;
-            } else {
-                return false;
-            }
+        //     if (upperStr.includes('VIAGRA') || upperStr.includes('XXX')) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+
+        // alert( checkSpam("innocent rabbit") );
+        
+        // 03. 문자열 줄이기
+        function truncate(str, maxlength) {
+            let copyStr = str;
+            let slicedCopyStr = copyStr.slice(0, maxlength - 1);
+            let copyStrLength = slicedCopyStr.length;
+            let omissionedCopyStr = ".".repeat((copyStr.length - copyStrLength));
+            
+            return slicedCopyStr + omissionedCopyStr;
         }
 
-        alert( checkSpam("innocent rabbit") );
-        
+        alert( truncate("Hi everyone!", 20) );
     </script>
 </body>
 </html>
