@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 01. 첫 글자를 대문자로 변경하기
+        // function ucFirst(str) {
+        //     let copyStr = str;
+        //     let firstChar = copyStr[0];
+        //     firstChar = firstChar.toUpperCase();
+        //     let otherChar = copyStr.slice(1)
+
+        //     return firstChar + otherChar;
+        // }
+
+        // alert( ucFirst("john") == "John")
+        
+        // 02. 스팸 문자열 걸러내기
+        function checkSpam(str) {
+            // 알아보기 쉽게 먼저 대문자로 바꾸자
+            // includes 메소드로 파악하기
+            let upperStr = str.toUpperCase();
+
+            if (upperStr.includes('VIAGRA') || upperStr.includes('XXX')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        alert( checkSpam("innocent rabbit") );
+        
+    </script>
+</body>
+</html>
