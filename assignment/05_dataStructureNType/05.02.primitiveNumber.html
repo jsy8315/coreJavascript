@@ -48,28 +48,37 @@
         // 03.숫자를 입력할 때까지 반복하기
         // 유효한 숫자형이 뭐지 정수, 소수. bigInt? 일단 만들고 보자...
         // 아 바로 와일문 돌려야할거 같은데
-        function readNumber() {
-            let a = prompt("유효한 숫자형 값을 입력하세요01", []);
-            // 아무것도 입력안하고 확인 > 자료형으로 변환(prompt) > 빈칸으로 구성됨
-            // 취소 > 자료형으로 변환(prompt) > null
+        // function readNumber() {
+        //     let a = prompt("유효한 숫자형 값을 입력하세요01", []);
+        //     // 아무것도 입력안하고 확인 > 자료형으로 변환(prompt) > 빈칸으로 구성됨
+        //     // 취소 > 자료형으로 변환(prompt) > null
 
-            // 아무것도 입력안하고 확인 > 숫자형으로 변환(+prompt) > 0
-            // 취소 > 숫자형으로 변환(+prompt) > null
-            while(!isFinite(a)) {
-                if (a == '' || a == null) {
-                    console.log(a)
-                    console.log("니 아무것도 입력안하고 확인 눌렀거나 취소 눌렀제");
-                    a = 0;
-                    return null
-                }  
-                else {
-                    a = prompt("유효한 숫자형 값을 입력하세요02", []);
-                }
-            }
-            return a;
-        }
+        //     // 아무것도 입력안하고 확인 > 숫자형으로 변환(+prompt) > 0
+        //     // 취소 > 숫자형으로 변환(+prompt) > null
+        //     while(!isFinite(a)) {
+        //         if (a == '' || a == null) {
+        //             console.log(a)
+        //             console.log("니 아무것도 입력안하고 확인 눌렀거나 취소 눌렀제");
+        //             a = 0;
+        //             return null
+        //         }  
+        //         else {
+        //             a = prompt("유효한 숫자형 값을 입력하세요02", []);
+        //         }
+        //     }
+        //     return a;
+        // }
         
-        readNumber();
+        // readNumber();
+
+        // 04. min과 max 사이에 있는 임의의 숫자 생성하기
+        // Math.random 통해서는 0 ~ 1 사이밖에 생성을 못하는데...
+        // 어찌됐든 비율로 정해질텐데
+        function randomInteger(a, b) {
+            let c = a + Math.random() * (b - a);
+            return c
+        }
+        console.log(randomInteger(1, 10));
     </script>
     </body>
     </html>
