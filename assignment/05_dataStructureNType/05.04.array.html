@@ -53,6 +53,25 @@
         
         // sumInput();
         
+        // 05.04.05 최대합 부분 배열
+        function getMaxSubSum(arr) {
+            let result = 0;
+            // 요소 전체가 음수인건 어떻게 판별하지 전체 for문 돌려야하나
+            // 그냥 0부터 비교하면 되는거 아님?
+            for (let i = 0; i < arr.length; i++) {
+                let count = 0;
+                for (let j = i; j < arr.length; j++){
+                    count += arr[j];
+                    result = Math.max(result, count);
+                }
+            }
+            return result
+        }
+        // 되긴하는데 O(n**2)이네...
+
+        // 05.04.05. 최대합 부분 배열 - 빠른 정답 코드
+        
+        alert( getMaxSubSum([-1, 2, 3, -9, 11]) )
     </script>
 </body>
 </html>
