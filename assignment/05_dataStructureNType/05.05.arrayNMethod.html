@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 05.05.배열과 메서드
+        // 01. border-left-width를 borderLeftWidth로 변경하기
+        //-없애고, 두번째 밸류 할당 
+        //두번째 밸류의 첫글자 분리
+        //첫글자 대문자로 만들고 나머지와 합체
+        function camelize(str) {
+            let splitedStr = str.split('-');
+            let result = [splitedStr[0]];
+            for (let i = 1; i < splitedStr.length; i++) {
+                result += firstCharUpperCase([splitedStr[i]])
+            }
+            return result
+        }
+        // 앞에 글자만 대문자로 만드는 걸 함수로 빼자
+        function firstCharUpperCase(str) {
+            let stredSplitStrFirst = (str[0].slice(0, 1)).toUpperCase();
+            let stredSplitStrOther = str[0].slice(1);
+            return stredSplitStrFirst + stredSplitStrOther
+        }
+        
+        console.log(camelize("-webkit-transition"));
+        
+        // 01. border-left-width를 borderLeftWidth로 변경하기
+
+    </script>
+</body>
+</html>
