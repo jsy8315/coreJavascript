@@ -40,12 +40,28 @@
         // console.log(camelize("list-style-image"));
 
         // 02. 특정 범위에 속하는 요소 찾기
-        function filterRange(arr, a, b) {
-            let filtered = arr.filter((item) => a <= item && b >= item);
-            return filtered
-        }
+        // function filterRange(arr, a, b) {
+        //     let filtered = arr.filter((item) => a <= item && b >= item);
+        //     return filtered
+        // }
         
-        console.log(filterRange([5, 3, 8, 1], 1, 4));
+        // console.log(filterRange([5, 3, 8, 1], 1, 4));
+
+        // 03. 특정 범위에 속하는 요소 찾기(배열 변경하기)
+        // function filterRangeInPlace(arr, a, b) {
+        //     let filtered = arr.filter((item) => (a > item || item > b))
+        //     arr = filtered
+        //     return arr
+        // }
+
+        // console.log(filterRangeInPlace([5, 3, 8, 1], 1, 4))
+
+        // 04. 내림차순으로 정렬하기
+        let arr = [5, 2, 1, -10, 8]
+
+        arr.sort((a, b) => b - a)
+
+        alert( arr );
     </script>
 </body>
 </html>
