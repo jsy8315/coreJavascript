@@ -12,25 +12,40 @@
         //-없애고, 두번째 밸류 할당 
         //두번째 밸류의 첫글자 분리
         //첫글자 대문자로 만들고 나머지와 합체
-        function camelize(str) {
-            let splitedStr = str.split('-');
-            let result = [splitedStr[0]];
-            for (let i = 1; i < splitedStr.length; i++) {
-                result += firstCharUpperCase([splitedStr[i]])
-            }
-            return result
-        }
-        // 앞에 글자만 대문자로 만드는 걸 함수로 빼자
-        function firstCharUpperCase(str) {
-            let stredSplitStrFirst = (str[0].slice(0, 1)).toUpperCase();
-            let stredSplitStrOther = str[0].slice(1);
-            return stredSplitStrFirst + stredSplitStrOther
-        }
+        // function camelize(str) {
+        //     let splitedStr = str.split('-');
+        //     let result = [splitedStr[0]];
+        //     for (let i = 1; i < splitedStr.length; i++) {
+        //         result += firstCharUpperCase([splitedStr[i]])
+        //     }
+        //     return result
+        // }
+        // // 앞에 글자만 대문자로 만드는 걸 함수로 빼자
+        // function firstCharUpperCase(str) {
+        //     let stredSplitStrFirst = (str[0].slice(0, 1)).toUpperCase();
+        //     let stredSplitStrOther = str[0].slice(1);
+        //     return stredSplitStrFirst + stredSplitStrOther
+        // }
         
-        console.log(camelize("-webkit-transition"));
-        
-        // 01. border-left-width를 borderLeftWidth로 변경하기
+        // console.log(camelize("-webkit-transition"));
 
+        // 01. border-left-width를 borderLeftWidth로 변경하기 - split, map, join 사용하기
+        // function camelize(str) {
+        //     return str
+        //         .split('-')
+        //         .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
+        //         .join('')
+        // }
+
+        // console.log(camelize("list-style-image"));
+
+        // 02. 특정 범위에 속하는 요소 찾기
+        function filterRange(arr, a, b) {
+            let filtered = arr.filter((item) => a <= item && b >= item);
+            return filtered
+        }
+        
+        console.log(filterRange([5, 3, 8, 1], 1, 4));
     </script>
 </body>
 </html>
