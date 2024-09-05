@@ -57,11 +57,23 @@
         // console.log(filterRangeInPlace([5, 3, 8, 1], 1, 4))
 
         // 04. 내림차순으로 정렬하기
-        let arr = [5, 2, 1, -10, 8]
+        // let arr = [5, 2, 1, -10, 8]
 
-        arr.sort((a, b) => b - a)
+        // arr.sort((a, b) => b - a)
 
-        alert( arr );
+        // alert( arr );
+
+        // 05. 배열 복사본을 정렬하기
+        function copySorted(arr) {
+            return arr.slice().sort();
+        }
+        let arr = ["HTML", "JavaScript", "CSS"];
+        let arr02 = [1, 2, 3, 15, 9]
+
+        alert( arr )
+        alert( copySorted(arr));
+        alert( arr )
+
     </script>
 </body>
 </html>
