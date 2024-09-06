@@ -88,30 +88,43 @@
 
         // bora.sayHi(); // 제 이름은 이보라입니다.
 
-        function Calculator() {
-            //this = {}
+        // function Calculator() {
+        //     //this = {}
             
-            this.method = {
-                "-": (a, b) => a - b,
-                "+": (a, b) => a + b
-            };
-            this.calculate = function(str) {
-                let split = str.split(' '),
-                    a = +split[0],
-                    op = split[1],
-                    b = +split[2];
+        //     this.method = {
+        //         "-": (a, b) => a - b,
+        //         "+": (a, b) => a + b
+        //     };
+        //     this.calculate = function(str) {
+        //         let split = str.split(' '),
+        //             a = +split[0],
+        //             op = split[1],
+        //             b = +split[2];
 
-                return this.method[op](a, b);
-            }
-            this.addMethod = function(name, func) {
-                this.method[name] = func;
-            }
-            //return this
-        }
+        //         return this.method[op](a, b);
+        //     }
+        //     this.addMethod = function(name, func) {
+        //         this.method[name] = func;
+        //     }
+        //     //return this
+        // }
 
   
-        let calc = new Calculator;
-        alert( calc.calculate("30 + 7") );
+        // let calc = new Calculator;
+        // alert( calc.calculate("30 + 7") );
+
+        // 07. 이름 매핑하기
+        // let john = { name: "John", age: 25 };
+        // let pete = { name: "Pete", age: 30 };
+        // let mary = { name: "John", age: 28 };
+
+        // let users = [ john, pete, mary ];
+
+        // let names = users.map(item => 
+        //     item.name
+        // )
+
+        // alert( names ); 
     </script>
 </body>
 </html>
