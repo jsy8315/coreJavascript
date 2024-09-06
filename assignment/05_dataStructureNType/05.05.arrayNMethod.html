@@ -64,16 +64,54 @@
         // alert( arr );
 
         // 05. 배열 복사본을 정렬하기
-        function copySorted(arr) {
-            return arr.slice().sort();
+        // function copySorted(arr) {
+        //     return arr.slice().sort();
+        // }
+        // let arr = ["HTML", "JavaScript", "CSS"];
+        // let arr02 = [1, 2, 3, 15, 9]
+
+        // alert( arr )
+        // alert( copySorted(arr));
+        // alert( arr )
+
+        // 06. 확장 가능한 계산기
+        // 1단계부터 만들자
+        // function User(name) {
+        //   this.name = name;
+
+        //   this.sayHi = function() {
+        //     alert( "제 이름은 " + this.name + "입니다." );
+        //   };
+        // }
+
+        // let bora = new User("이보라");
+
+        // bora.sayHi(); // 제 이름은 이보라입니다.
+
+        function Calculator() {
+            //this = {}
+            
+            this.method = {
+                "-": (a, b) => a - b,
+                "+": (a, b) => a + b
+            };
+            this.calculate = function(str) {
+                let split = str.split(' '),
+                    a = +split[0],
+                    op = split[1],
+                    b = +split[2];
+
+                return this.method[op](a, b);
+            }
+            this.addMethod = function(name, func) {
+                this.method[name] = func;
+            }
+            //return this
         }
-        let arr = ["HTML", "JavaScript", "CSS"];
-        let arr02 = [1, 2, 3, 15, 9]
 
-        alert( arr )
-        alert( copySorted(arr));
-        alert( arr )
-
+  
+        let calc = new Calculator;
+        alert( calc.calculate("30 + 7") );
     </script>
 </body>
 </html>
