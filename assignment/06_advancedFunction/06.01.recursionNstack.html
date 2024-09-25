@@ -73,6 +73,61 @@
         // }
 
         // console.log(fib02(77));
+
+        // 04. 단일 연결 리스트 출력하기
+        // let list = {
+        //   value: 1,
+        //   next: {
+        //     value: 2,
+        //     next: {
+        //       value: 3,
+        //       next: {
+        //         value: 4,
+        //         next: null
+        //       }
+        //     }
+        //   }
+        // };
+
+        // // 001. 반복문 사용
+        // function printList01(list) {
+        //     for (let i = 1; i <= 4; i++) {
+        //         console.log(list);
+        //         list = list.next;
+        //     }
+        // }
+        // printList01(list);
+
+        // // 002. 재귀 사용
+        // function printList02(list) { 
+        //     console.log(list);
+        //     list = list.next;
+        //     printList02(list);
+        // }
+        // // printList02(list);
+
+        // // 003. 참고코드
+        // // 추후 함수 확장 시 list를 가지고 뭔가 해야할 수 있기에, 리스트를 임시변수에 저장
+        // function printList03(list) {
+        //     let tmp = list;
+
+        //     while (tmp) {
+        //         alert(tmp.value);
+        //         tmp = tmp.next;
+        //     }
+        // }
+        // // printList03(list);
+
+        // function printList04(list) {
+        //     alert(list.value);
+
+        //     if (list.next) {
+        //         printList04(list.next);
+        //     }
+        // }
+        // printList04(list); 
+        // 반복문은 리소스를 효율적으로 사용하는 장점, 재귀는 코드 길이가 짧고 이해가 쉽다는 장점 존재
+
     </script>
 </body>
 </html>
