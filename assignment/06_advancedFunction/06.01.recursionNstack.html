@@ -128,6 +128,45 @@
         // printList04(list); 
         // 반복문은 리소스를 효율적으로 사용하는 장점, 재귀는 코드 길이가 짧고 이해가 쉽다는 장점 존재
 
+        // 05. 단일 연결 리스트를 역순으로 출력하기
+        // let list = {
+        //   value: 1,
+        //   next: {
+        //     value: 2,
+        //     next: {
+        //       value: 3,
+        //       next: {
+        //         value: 4,
+        //         next: null
+        //       }
+        //     }
+        //   }
+        // };
+
+        // 반복문 사용
+        // function printReverseList01(list) {
+        //     let tmp = list;
+        //     let arr = []
+        //     while (tmp) {
+        //         arr.push(tmp.value);
+        //         tmp = tmp.next;
+        //     }
+
+        //     for (let i = arr.length - 1; i >= 0; i--) {
+        //         alert( arr[i] );
+        //     }
+        // }
+        // printReverseList01(list);
+
+        // // 재귀 사용
+        // function printReverseList02(list) {
+        //     if (list.next) {
+        //         printReverseList02(list.next);
+        //     }
+
+        //     alert(list.value);
+        // }
+        // printReverseList02(list);
     </script>
 </body>
 </html>
