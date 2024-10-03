@@ -31,3 +31,55 @@ function makeWorker() {
 // 정답
 //   "Pete"가 출력된다. 
 //   만약 makeWorker()함수 내부에 let name가 없었다면 외부 렉시컬 환경(전역 렉시컬 환경)을 참조후, "John"이 출력됐을것.
+
+// 03. counter는 독립적일까요?
+function makeCounter() {
+    let count = 0;
+  
+    return function() {
+      return count++;
+    };
+  }
+  
+  let counter = makeCounter();
+  let counter2 = makeCounter();
+  
+  alert( counter() ); // 0
+  alert( counter() ); // 1
+  
+  alert( counter2() ); // ?
+  alert( counter2() ); // ?
+
+// 내 답압
+// 1. 먼저 전역 렉시컬 환경에 변수, 함수가 할당된다
+
+// 전역 렉시컬 환경
+// makeCounter : function
+// counter : undefined
+// counter2 : undefined
+
+// 2. makeCounter() 함수 할당
+// lexical environment of makeCounter 
+// count : 0
+// [[Environment]] -> 전역 렉시컬 환경
+// 내부함수 : function
+
+// 3. 내부 함수 할당
+// lexical environment of 내부함수
+// count : undefined
+// [[Environment]] -> lexical environment of makeCounter
+
+// alert( counter() ) > makeCounter의 내부함수에서 lexical environment of makeCounter를 참고, 
+// lexical environment of makeCounter 
+// count : 1
+// 로 변하고 1을 출력
+// alert( counter() );도 같은 절차로 2를 출력
+
+// alert( counter2())
+// lexical environment of makeCounter 
+// count : 2
+
+// alert( counter2() );를 진행할땐?
+// 같은 lexical environment of makeCounter 하니까 3이 되지 않을까?
+// 어차피 똑같이 내부 함수의 렉시컬 환경은 empty이기 때문에, 외부 참조를 해서 count를 확인할텐데
+
