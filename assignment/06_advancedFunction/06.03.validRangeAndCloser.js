@@ -83,3 +83,11 @@ function makeCounter() {
 // 같은 lexical environment of makeCounter 하니까 3이 되지 않을까?
 // 어차피 똑같이 내부 함수의 렉시컬 환경은 empty이기 때문에, 외부 참조를 해서 count를 확인할텐데
 
+// 정답 코드
+// let counter = makeCounter(); 이 코드는 makeCounter()를 실행해서 반환된 함수를 counter 변수에 저장합니다. 
+// 이때 counter는 count가 0인 새로운 렉시컬 환경을 기억하는 클로저가 됩니다.
+// 마찬가지로 let counter2 = makeCounter();를 실행하면 또 다른 렉시컬 환경이 만들어지고, counter2는 이 환경을 기억하는 새로운 클로저가 됩니다.
+
+// 0,1 이 출력된다
+// 함수 실행 시 새로운 레시컬 환경이 생성된다는게 차이점, 함수가 반환할떄 마다 새로운 렉시컬 환경이 만들어진다.
+// 함수는 단순히 메모리 상의 코드 조각이 아니라(변수와 다르게) 함수가 호출될 떄마다 그 함수가 실행된 렉시컬 환경이 함께 따라온다
