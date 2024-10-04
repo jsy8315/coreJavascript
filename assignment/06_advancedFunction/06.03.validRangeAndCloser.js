@@ -122,8 +122,27 @@ function makeCounter() {
 // alert( counter.down() ); // 1
 // 이렇게 출력될거 같은디 
 
-//정답
+// 정답
 // 생성자 함수의 두 중첩 함수는 동일한 외부 렉시컬 환경에서 만들어졌기 때문에 같은 count 변수를 공유함
+
+
+// 05. if문 안의 함수
+// 내 정답 코드
+// 내가 생각한 코드 구현 방식
+// 01. 전역 렉시컬 환경
+// phrase : "Hello"
+// sayHi() : undefined
+
+// 02. if문의 렉시컬 환경
+// user: "John"
+// [[Environment]] -> 전역 렉시컬 환경 참조
+
+// 03. 내부함수 sayHi의 렉시컬 환경
+// phrase : undefined
+// user: undefined
+// [[Environment]] -> if문의 렉시컬 환경
+
+// sayHi 실행 > 차례차례 참조해서 "Hello, John"을 출력할듯
 
 
 
