@@ -89,5 +89,39 @@ function makeCounter() {
 // 마찬가지로 let counter2 = makeCounter();를 실행하면 또 다른 렉시컬 환경이 만들어지고, counter2는 이 환경을 기억하는 새로운 클로저가 됩니다.
 
 // 0,1 이 출력된다
-// 함수 실행 시 새로운 레시컬 환경이 생성된다는게 차이점, 함수가 반환할떄 마다 새로운 렉시컬 환경이 만들어진다.
+// 함수 실행 시 새로운 레시컬 환경이 생성된다는게 차이점, 
+
+// 함수가 반환할떄 마다 (실행될때마다)새로운 렉시컬 환경이 만들어진다. (포인트)
+
 // 함수는 단순히 메모리 상의 코드 조각이 아니라(변수와 다르게) 함수가 호출될 떄마다 그 함수가 실행된 렉시컬 환경이 함께 따라온다
+
+// 04. counter 객체
+// 내 정답 코드
+// 01. 전역 렉시컬 환경에 다음과 같은 변수와 함수가 올라간다
+
+// global lexical environment
+// Counter : function
+// counter : undefined
+
+// lexical environment of Counter
+// count : 0
+// this.up : undefined
+// this.down : undefined
+// [[Environment]] of Counter -> global lexical environment (참조)
+
+// Counter의 첫번째 내장함수 lexical environmen
+// count : undefined
+// [[Environment]] -> lexical environment of Counter 참조
+
+// Counter의 두번째 내장함수 lexical environmen
+// count : undefined
+// [[Environment]] -> lexical environment of Counter 참조
+
+// alert( counter.up() ); // 1
+// alert( counter.up() ); // 2
+// alert( counter.down() ); // 1
+// 이렇게 출력될거 같은디 
+
+
+
+ 
