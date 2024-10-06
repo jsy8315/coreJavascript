@@ -194,6 +194,31 @@ function makeCounter() {
 // 내 정답코드
 // sum(1)(2) = 3
 // sum(5)(-1) = 4
-function sum(a)(b) {
+
+// 정답코드
+function sum(a) {
+
+  return function(b) {
+    return a + b; // 'a'는 외부 렉시컬 환경에서 가져옵니다.
+  };
 
 }
+// 01. 전역 렉시컬 환경
+//   sum : function
+//   (a, b는 전역 렉시컬 환경에 존재하지 않음)
+
+//   그리고 sum의 [[Environment]]에 함수 생성 정보 저장
+
+//   내부 함수 function(b) 선언 : [[Environment]]에 함수 생성 정보 저장, 
+//   이후 lexical environment of sum참조
+
+// 02. alert( (sum(1) ) : sum함수 실행, lexical environment of sum 생성
+//  a : 1
+//  [[Environment]] -> (전역 렉시컬 환경 참조)
+
+
+// 03. sum(1)(2) 호출, lexical environment of sum(a)(b) 생성 (두번째 함수 생성)
+//   b : 2
+//   [[Environment]] -> lexical environment of sum 참조 (a = 1)
+  
+
