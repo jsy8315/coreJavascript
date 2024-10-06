@@ -222,3 +222,27 @@ function sum(a) {
 //   [[Environment]] -> lexical environment of sum 참조 (a = 1)
   
 
+// 07. 변수가 보일까요?
+let x = 1;
+
+function func() {
+  console.log(x); // ?
+
+  let x = 2;
+}
+
+func();
+
+// 내 로직
+01. 전역 렉시컬 환경
+  x : 1
+  func : function
+
+02. func()가 선언, [[Environment]] -> 전역 렉시컬 환경 참조
+
+03. lexical environment of func
+  x : 2
+
+2가 출력된다
+
+
