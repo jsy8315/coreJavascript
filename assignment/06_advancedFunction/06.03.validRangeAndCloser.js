@@ -234,15 +234,18 @@ function func() {
 func();
 
 // 내 로직
-01. 전역 렉시컬 환경
-  x : 1
-  func : function
+// 01. 전역 렉시컬 환경
+//   x : 1
+//   func : function
 
-02. func()가 선언, [[Environment]] -> 전역 렉시컬 환경 참조
+// 02. func()가 선언, [[Environment]] -> 전역 렉시컬 환경 참조
 
-03. lexical environment of func
-  x : 2
+// 03. lexical environment of func
+//   x : 2
 
-2가 출력된다
+// 2가 출력된다
 
+// 정답 코드
+// 03. lexical environment of func
+//   에서 x : 2로 초기화되기 전에 console.log(x)이므로, 에러가 발생한다
 
