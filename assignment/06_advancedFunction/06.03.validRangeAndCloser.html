@@ -71,18 +71,18 @@
         // 따라서 sayHi 함수는 전역 환경에서 최신 name 값인 "지민"을 찾아서 "지민님, 안녕하세요."를 출력합니다.
 
         // 02. 어떤 변수가 사용될까요?
-        function makeWorker() {
-          let name = "Pete";
+        // function makeWorker() {
+        //   let name = "Pete";
 
-          return function () {
-            alert(name);
-          };
-        }
+        //   return function () {
+        //     alert(name);
+        //   };
+        // }
 
-        let name = "John";
+        // let name = "John";
 
-        // 함수를 만듭니다.
-        let work = makeWorker();
+        // // 함수를 만듭니다.
+        // let work = makeWorker();
 
         // 함수를 호출합니다.
         work(); // 무엇이 나올까요?
