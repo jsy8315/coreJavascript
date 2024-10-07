@@ -250,6 +250,9 @@ function func() {
 //   에서 x : 2로 초기화되기 전에 console.log(x)이므로, 에러가 발생한다
 // 데드존 (초기화가 일어나기 전 변수를 일시적으로 사용하지 못하는 구간(코드 블록의 시작부터 let이 나올 때까지))
 
+
+
+
 // 08. 함수를 이용해 원하는 값만 걸러내기
 /* ... 여기에 두 함수 inBetween과 inArray을 만들어주세요 ...*/
 // filter에 넘겨서 사용할 수 있는 함수 두 가지를 만들어봅시다.
@@ -275,3 +278,41 @@ function func() {
 
 // console.log("arr.filter(inBetween02(3, 6)) : " + arr.filter( inBetween02(3, 6) ) ); 
 // 안나온다...2시간이 넘었으니 정답 코드 고고
+
+// 정답코드
+function inBetween(a, b) {
+  return function(x) {
+    return x >= a && x <= b;
+  };
+}
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+console.log("arr.filter(inBetween(3, 6)) : " + arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+
+// 로직 흐름
+// 01. 전역 렉시컬 환경
+// arr : [1, 2, 3, 4, 5, 6, 7]
+// filter : 배열 메서드 (내장 함수)
+// inBetween : func
+// a ,b, x는 정의되지 않음(undefined)
+
+// 02. inBetween이 선언되면서 [[Environment]]가 생성, inBetween이 생성된 곳의 정보 저장, 전역렉시컬환경 참조
+
+// 03. inBetween의 내부 함수가 선언되면서 [[Environment]]가 생성, inBetween의 렉시컬 환경 참조
+
+// 04. inBetween이 arr.filter(inBetween(3, 6))에서 실행되면서 lexical environment of inBetween 생성
+// a: undefined -> 3 (전역 렉시컬 환경 함조)
+// b: undefined -> 6 (전역 렉시컬 환경 함조)
+// 내부함수 function(x)이 반환되고, 이 내부함수는 a, b를 기억하는 클로저가 된다 (렉시컬 환경에 저장되는게 아님)
+
+// 05. arr.filter 메서드가 배열의 각 요소에 대해 내부 함수를 실행
+//   배열의 요소마다 내부함수 function(x)를 호출(내부함수의 렉시컬 환경 생성)
+//   내부함수는 클로저로 저장된 a, b를 기억, 조건 검사
+  
+//   lexical environment of function(x)
+//     x 저장
+
+
+
+
+
