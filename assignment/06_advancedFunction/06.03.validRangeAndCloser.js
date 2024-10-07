@@ -9,7 +9,7 @@ function makeWorker() {
   // 함수를 만듭니다.
   let work = makeWorker();
   // 함수를 호출합니다.
-  work(); // 무엇이 나올까요?
+  //work(); // 무엇이 나올까요?
 
   // 내 사고방식
 //   01. 전역 렉시컬 환경 (전역 렉시컬 환경은 하기 괄호 안과 같음)
@@ -44,11 +44,11 @@ function makeCounter() {
   let counter = makeCounter();
   let counter2 = makeCounter();
   
-  alert( counter() ); // 0
-  alert( counter() ); // 1
+  // alert( counter() ); // 0
+  // alert( counter() ); // 1
   
-  alert( counter2() ); // ?
-  alert( counter2() ); // ?
+  // alert( counter2() ); // ?
+  // alert( counter2() ); // ?
 
 // 내 답압
 // 1. 먼저 전역 렉시컬 환경에 변수, 함수가 할당된다
@@ -231,7 +231,7 @@ function func() {
   let x = 2;
 }
 
-func();
+// func();
 
 // 내 로직
 // 01. 전역 렉시컬 환경
@@ -250,3 +250,28 @@ func();
 //   에서 x : 2로 초기화되기 전에 console.log(x)이므로, 에러가 발생한다
 // 데드존 (초기화가 일어나기 전 변수를 일시적으로 사용하지 못하는 구간(코드 블록의 시작부터 let이 나올 때까지))
 
+// 08. 함수를 이용해 원하는 값만 걸러내기
+/* ... 여기에 두 함수 inBetween과 inArray을 만들어주세요 ...*/
+// filter에 넘겨서 사용할 수 있는 함수 두 가지를 만들어봅시다.
+// inBetween(a, b) – a 이상 b 이하
+// inArray([...]) – 배열 안에 있는 값인가
+
+
+// 내 정답 코드
+// function inBetween(a) {
+//   return a >= 3
+// }
+
+
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+
+// // console.log("arr.filter(inBetween) : " + arr.filter(inBetween) );
+
+// function inBetween02(i) {
+//   return function(a, b) {
+//         return i >= a && i <= b
+//       }
+// }
+
+// console.log("arr.filter(inBetween02(3, 6)) : " + arr.filter( inBetween02(3, 6) ) ); 
+// 안나온다...2시간이 넘었으니 정답 코드 고고
