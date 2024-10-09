@@ -295,8 +295,8 @@ function inBetween(a, b) {
 }
 
 let arr = [1, 2, 3, 4, 5, 6, 7];
-console.log("arr.filter(inBetween(3, 6)) : " + arr.filter(inBetween(3, 6)) ); // 3,4,5,6
-console.log("arr.filter(inArray([1, 2, 10]) : " + arr.filter(inArray([1, 2, 10])) ); // 1, 2
+// console.log("arr.filter(inBetween(3, 6)) : " + arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+// console.log("arr.filter(inArray([1, 2, 10]) : " + arr.filter(inArray([1, 2, 10])) ); // 1, 2
 
 // 로직 흐름
 // 01. 전역 렉시컬 환경ㄴ
@@ -321,6 +321,43 @@ console.log("arr.filter(inArray([1, 2, 10]) : " + arr.filter(inArray([1, 2, 10])
 //   lexical environment of function(x)
 //     x 저장
 
+
+
+
+// 09. 필드를 기준으로 정렬하기
+
+// 내 정답 코드
+let users = [
+  { name: "John", age: 20, surname: "Johnson" },
+  { name: "Pete", age: 18, surname: "Peterson" },
+  { name: "Ann", age: 19, surname: "Hathaway" }
+];
+
+// function byField(fieldName) {
+//   return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
+// }
+
+function byField(fieldName) {
+  return function(a,b) {
+    if (a[fieldName] > b[fieldName]) {
+      return 1
+    } else {
+      return -1
+    }
+  }
+}
+// 점 표기법 vs 대괄호 표기법
+// 점 표기법 : a.fieldName 이라는 고정된 프로퍼티를 찾음, 변수로 해석하지 않고 문자열로 취급, name, age, surname 등의 프로퍼티에 접근 불가
+// 대괄호 표기법 : 변수 fieldName의 값을 읽어서 그 값을 프로퍼티 이름으로 사용
+
+
+// users.sort(byField('name'));
+
+// console.log( users );
+
+// users.sort(byField('age'));
+
+// console.log( users );
 
 
 
