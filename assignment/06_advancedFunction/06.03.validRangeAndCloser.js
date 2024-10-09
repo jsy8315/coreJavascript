@@ -260,7 +260,7 @@ function func() {
 // inArray([...]) – 배열 안에 있는 값인가
 
 
-// 내 정답 코드
+// 내 정답 코드 inBetween
 // function inBetween(a) {
 //   return a >= 3
 // }
@@ -279,6 +279,14 @@ function func() {
 // console.log("arr.filter(inBetween02(3, 6)) : " + arr.filter( inBetween02(3, 6) ) ); 
 // 안나온다...2시간이 넘었으니 정답 코드 고고
 
+// 내 정답 코드 inArray
+function inArray(arraySample) { 
+  return function(x) {
+    return arraySample.includes(x) // arr의 요소는 x, 이 x를 arraySample에 있는지 확인하는 식으로?
+  }
+}
+
+
 // 정답코드
 function inBetween(a, b) {
   return function(x) {
@@ -288,9 +296,10 @@ function inBetween(a, b) {
 
 let arr = [1, 2, 3, 4, 5, 6, 7];
 console.log("arr.filter(inBetween(3, 6)) : " + arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+console.log("arr.filter(inArray([1, 2, 10]) : " + arr.filter(inArray([1, 2, 10])) ); // 1, 2
 
 // 로직 흐름
-// 01. 전역 렉시컬 환경
+// 01. 전역 렉시컬 환경ㄴ
 // arr : [1, 2, 3, 4, 5, 6, 7]
 // filter : 배열 메서드 (내장 함수)
 // inBetween : func
@@ -311,6 +320,8 @@ console.log("arr.filter(inBetween(3, 6)) : " + arr.filter(inBetween(3, 6)) ); //
   
 //   lexical environment of function(x)
 //     x 저장
+
+
 
 
 
