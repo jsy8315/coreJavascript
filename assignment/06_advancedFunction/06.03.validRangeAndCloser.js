@@ -350,17 +350,53 @@ function byField(fieldName) {
 // 점 표기법 : a.fieldName 이라는 고정된 프로퍼티를 찾음, 변수로 해석하지 않고 문자열로 취급, name, age, surname 등의 프로퍼티에 접근 불가
 // 대괄호 표기법 : 변수 fieldName의 값을 읽어서 그 값을 프로퍼티 이름으로 사용
 
-
 // users.sort(byField('name'));
-
 // console.log( users );
-
 // users.sort(byField('age'));
-
 // console.log( users );
 
 
 
 
+//  10. 함수를 사용해 군대 만들기
+function makeArmy() {
+  let shooters = [];
+
+  let i = 0;
+  while (i < 10) {
+    let shooter = function() { // shooter 함수
+      alert( i ); // 몇 번째 shooter인지 출력해줘야 함
+
+    };
+    console.log(shooter)
+    shooters.push(shooter);
+    
+    i++;
+  }
+
+  console.log( shooters );
+  return shooters;
+}
+
+let army = makeArmy();
+
+army[0](); // 0번째 shooter가 10을 출력함
+army[5](); // 5번째 shooter 역시 10을 출력함
+// 모든 shooter가 자신의 번호 대신 10을 출력하고 있음
 
 
+
+// 내 정답 코드
+// 01. 전역 렉시컬 환경
+// army : undefined
+
+// 02. makeArmy함수가 실행되면서 lexical environment of makeArmy 생성
+// shooters : [] (array)
+// i : 0
+
+// 03. makeArmy 함수 선언
+// [[Environment]] 생성, 전역 렉시컬 환경 참조
+
+// 04. makeArmy함수의 내부함수인 while문 실행 : lexical environment of 내부함수 while문 생성
+// shooter : 내부함수
+// i : undefined
