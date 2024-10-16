@@ -14,7 +14,7 @@ function makeCounter() {
   alert( counter() ); // 0
   alert( counter() ); // 1
   
-//   counter.set(10); // set the new count
+counter.set(10); // set the new count
   
 //   alert( counter() ); // 10
   
